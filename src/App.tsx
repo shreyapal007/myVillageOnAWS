@@ -3,7 +3,7 @@ import '@aws-amplify/ui-react/styles.css'
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
-
+import { Button } from '@aws-amplify/ui-react';
 const client = generateClient<Schema>();
 
 function App() {
@@ -32,8 +32,8 @@ function App() {
           <button onClick={createTodo}>+ new</button>
           <ul>
             {todos.map((todo) => (
+              <Button> Delete </Button>;
               <li 
-              <button onClick={deleteTodo}>Delete</button>
               onClick={() => deleteTodo(todo.id)}
               key={todo.id}>{todo.content}
               </li>
